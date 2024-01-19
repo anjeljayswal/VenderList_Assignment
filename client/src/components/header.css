@@ -19,7 +19,8 @@ header{
   
   header nav .right ul{
     display: flex;
-    width: 400px;
+    /* width: 400px; */
+    
     justify-content: space-between;
     align-items: center;
     list-style: none;
@@ -27,6 +28,7 @@ header{
   
   header nav .right ul li{
     font-size: 19px;
+    margin-left: 20px;
     text-transform: capitalize;
     color: white;
     cursor: pointer;

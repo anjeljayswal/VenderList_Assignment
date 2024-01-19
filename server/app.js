@@ -91,7 +91,7 @@ app.get("/login/sucess",async(req,res)=>{
 app.get("/logout",(req,res,next)=>{
     req.logout(function(err){
         if(err){return next(err)}
-        res.redirect("http://localhost:3001");
+        res.redirect("http://localhost:3000");
     })
 })
 
