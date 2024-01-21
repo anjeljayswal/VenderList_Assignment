@@ -48,7 +48,7 @@ const Dashboard = () => {
         </button>
       </div>
       <div className='flex justify-between items-center'>
-        <h1 className='text-3xl my-6'>Venders List</h1>
+        <h1 className='text-3xl my-6'>Vendors List</h1>
         <Link to='/venders/create'>
         
           <MdOutlineAddBox className='text-sky-800 text-4xl' />
