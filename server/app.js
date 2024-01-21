@@ -3,8 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 require("./db/conn")
-const PORT = 6005;
-
+// const port = process.env.PORT;
 
 const session = require("express-session");
 const passport = require("passport");
@@ -100,15 +99,26 @@ app.get("/logout",(req,res,next)=>{
 
 // for vender 
 const venderRoute = require("./venderRoutes/venderRoutes");
+const { default: mongoose } = require("mongoose");
 
 app.use("/api", venderRoute);
 
 
 
+
+mongoose.connect(process.env.DATABASE).then(()=>{
+    const PORT = process.env.PORT || 8000
+    app.listen(PORT, ()=>{
+        console.log(`APp is Litening on PORT ${PORT}`);
+    })
+}).catch(err =>{
+    console.log(err);
+})
+
 app.get("/",(req,res)=>{
     res.status(200).json("Server started")
 });
 
-app.listen(PORT,()=>{
-    console.log(`server start at port no ${PORT}`)
-})
+// app.listen(port,()=>{
+//     console.log(`server start at port no ${port}`)
+// })

@@ -17,8 +17,28 @@ const CreateVenders = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const [validationErrors, setValidationErrors] = useState({});
+  const validateForm = ({value}) => {
+    const errors = {};
+
+    if (!vname && !bname && !accountNumber && !addresLine1 && !addresLine2 && !city && !zipcode ) {
+      errors.value = `${value} is required`;
+    }
+    // if(!vname){
+    //   errors.vname= "Name is Required";
+    // }
+
+    // Add similar checks for other fields
+
+    setValidationErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const handleSaveBook = () => {
+    if (!validateForm()) {
+      // Form validation failed
+      return;
+    }
     const data = {
       vname,
       accountNumber,
@@ -58,6 +78,7 @@ const CreateVenders = () => {
             onChange={(e) => setVName(e.target.value)}
             className='border-2 border-gray-500 px-2 py-1 w-full'
           />
+          {validationErrors.vname && <p className="text-red-500">{validationErrors.vname}</p>}
         </div>
         <div className='my-1'>
           <label className='text-xl mr-4 text-gray-500'>Account Number</label>
