@@ -21,12 +21,12 @@ const CreateVenders = () => {
   const validateForm = ({value}) => {
     const errors = {};
 
-    if (!vname && !bname && !accountNumber && !addresLine1 && !addresLine2 && !city && !zipcode ) {
-      errors.value = `${value} is required`;
-    }
-    // if(!vname){
-    //   errors.vname= "Name is Required";
+    // if (!vname && !bname && !accountNumber && !addresLine1 && !addresLine2 && !city && !zipcode ) {
+    //   errors.value = `${value} is required`;
     // }
+    if(!vname){
+      errors.vname= "Name is Required";
+    }
 
     // Add similar checks for other fields
 
