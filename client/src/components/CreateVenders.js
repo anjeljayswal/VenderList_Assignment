@@ -18,7 +18,7 @@ const CreateVenders = () => {
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
   const [validationErrors, setValidationErrors] = useState({});
-  const validateForm = ({value}) => {
+  const validateForm = () => {
     const errors = {};
 
     // if (!vname && !bname && !accountNumber && !addresLine1 && !addresLine2 && !city && !zipcode ) {

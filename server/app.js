@@ -92,7 +92,8 @@ app.get("/login/sucess",async(req,res)=>{
 app.get("/logout",(req,res,next)=>{
     req.logout(function(err){
         if(err){return next(err)}
-        res.redirect("http://localhost:3000");
+        // res.redirect("http://localhost:3000");
+        res.redirect("https://vender-mern-frontend.onrender.com");
     })
 })
 // app.use('/venders', venderRoute);
