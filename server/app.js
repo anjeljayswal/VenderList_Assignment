@@ -115,9 +115,9 @@ mongoose.connect(process.env.DATABASE).then(()=>{
     console.log(err);
 })
 
-app.get("/",(req,res)=>{
-    res.status(200).json("Server started")
-});
+// app.get("/",(req,res)=>{
+//     res.status(200).json("Server started")
+// });
 
 // app.listen(port,()=>{
 //     console.log(`server start at port no ${port}`)
