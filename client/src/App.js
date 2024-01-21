@@ -7,6 +7,10 @@ import Login from './components/Login';
 import Error from './components/Error';
 import { Route, Router, Routes } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
+import CreateVenders from './components/CreateVenders';
+import ShowVender from './components/ShowVender';
+import EditVender from './components/EditVender';
+import DeleteVender from './components/DeleteVender';
 
 function App() {
   return (<>  
@@ -15,7 +19,13 @@ function App() {
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/login' element={<Login />} />
-      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/dashboard' element={<Dashboard />}/>
+      <Route path='/venders/details/:id' element={<ShowVender/>}/>
+      <Route path='/venders/edit/:id' element={<EditVender />} />
+       
+      <Route path='/venders/delete/:id' element={<DeleteVender />}/>
+       
+       <Route path='/venders/create' element={<CreateVenders />} />
       <Route path='*' element={<Error />} />
     </Routes>
   </>

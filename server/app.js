@@ -4,10 +4,12 @@ const app = express();
 const cors = require("cors");
 require("./db/conn")
 const PORT = 6005;
+
+
 const session = require("express-session");
 const passport = require("passport");
 const OAuth2Strategy = require("passport-google-oauth2").Strategy;
-const userdb = require("./model/userSchema")
+const userdb = require("./venderModel/userSchema.js")
 
 const clientid ="43355704766-c5kfdmok9k2udohl0eha9a7nvaombs7r.apps.googleusercontent.com"
 const clientsecret="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"
@@ -16,7 +18,7 @@ const clientsecret="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"
 
 app.use(cors({
     origin:"http://localhost:3000",
-    methods:"GET,POST,PUT,DELETE",
+    methods:"GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials:true
 }));
 
@@ -94,11 +96,18 @@ app.get("/logout",(req,res,next)=>{
         res.redirect("http://localhost:3000");
     })
 })
+// app.use('/venders', venderRoute);
+
+// for vender 
+const venderRoute = require("./venderRoutes/venderRoutes");
+
+app.use("/api", venderRoute);
 
 
-// app.get("/",(req,res)=>{
-//     res.status(200).json("Server started")
-// });
+
+app.get("/",(req,res)=>{
+    res.status(200).json("Server started")
+});
 
 app.listen(PORT,()=>{
     console.log(`server start at port no ${PORT}`)

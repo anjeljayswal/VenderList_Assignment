@@ -30,7 +30,7 @@ const Headers = () => {
       <header>
         <nav>
           <div className="left">
-            <h1>Harsh Pathak</h1>
+            <h1>Vender Lists</h1>
           </div>
           <div className="right">
             <ul>
@@ -42,11 +42,11 @@ const Headers = () => {
               {
                 Object?.keys(userdata)?.length > 0 ? (
                   <>
-                  <li>
+                  {/* <li>
                       <NavLink to="/">
                         Home
                       </NavLink>
-                    </li>
+                    </li> */}
                     <li>
                       <NavLink to="/dashboard">
                         Dashboard
