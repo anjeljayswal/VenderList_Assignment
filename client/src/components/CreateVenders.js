@@ -27,6 +27,14 @@ const CreateVenders = () => {
     if(!vname){
       errors.vname= "Name is Required";
     }
+    // Validate Account Number
+  if (!/^\d{16}$/.test(accountNumber)) {
+    errors.accountNumber = 'Account Number must be 16 digits';
+  }
+  // Validate Zip Code
+  if (!/^\d{6}$/.test(zipcode)) {
+    errors.zipcode = 'Zip Code must be 6 digits';
+  }
 
     // Add similar checks for other fields
 
@@ -88,6 +96,7 @@ const CreateVenders = () => {
             onChange={(e) => setAccountNumber(e.target.value)}
             className='border-2 border-gray-500 px-4 py-1  w-full '
           />
+          {validationErrors.accountNumber && <p className="text-red-500">{validationErrors.accountNumber}</p>}
         </div>
         <div className='my-1'>
           <label className='text-xl mr-4 text-gray-500'>Bank Name</label>
@@ -97,6 +106,7 @@ const CreateVenders = () => {
             onChange={(e) => setBname(e.target.value)}
             className='border-2 border-gray-500 px-4 py-1  w-full '
           />
+          {/* {validationErrors.vname && <p className="text-red-500">{validationErrors.vname}</p>} */}
         </div>
         <div className='my-1'>
           <label className='text-xl mr-4 text-gray-500'>Address Line1</label>
@@ -133,6 +143,7 @@ const CreateVenders = () => {
             onChange={(e) => setZipcode(e.target.value)}
             className='border-2 border-gray-500 px-4 py-1  w-full '
           />
+          {validationErrors.zipcode && <p className="text-red-500">{validationErrors.zipcode}</p>}
         </div>
         <button className='flex items-center justify-center p-1 bg-sky-300  w-10 m' onClick={handleSaveBook}>
           Save
