@@ -28,7 +28,7 @@ const ShowVender = () => {
     }, []);
   
   return (
-    <div className='p-4'>
+    <div className='p-4 bg-gradient-to-r from-purple-500 to-pink-500'>
       <BackButton />
       
       <h1 className='text-3xl my-4'>Show Vender</h1>

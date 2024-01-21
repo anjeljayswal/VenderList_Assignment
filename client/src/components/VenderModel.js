@@ -4,7 +4,7 @@ import { BiUserCircle } from 'react-icons/bi';
 
 import React from 'react'
 
-const VenderModel = ({venders, onClose}) => {
+const VenderModel = ({vender, onClose}) => {
 
   return (
     <div
@@ -20,18 +20,18 @@ const VenderModel = ({venders, onClose}) => {
           onClick={onClose}
         />
         <h2 className='w-fit px-4 py-1 bg-red-300 rounded-lg'>
-          {venders.accountNumber}
+          {vender.accountNumber}
         </h2>
-        <h4 className='my-2 text-gray-500'>{venders._id}</h4>
+        <h4 className='my-2 text-gray-500'>{vender._id}</h4>
         <div className='flex justify-start items-center gap-x-2'>
           <PiBookOpenTextLight className='text-red-300 text-2xl' />
-          <h2 className='my-1'>{venders.vname}</h2>
+          <h2 className='my-1'>{vender.vname}</h2>
         </div>
         <div className='flex justify-start items-center gap-x-2'>
           <BiUserCircle className='text-red-300 text-2xl' />
-          <h2 className='my-1'>{venders.bname}</h2>
+          <h2 className='my-1'>{vender.bname}</h2>
         </div>
-        <p className='mt-4'>Anything You want to show</p>
+        <p className='mt-4'>Other details we can add here</p>
         <p className='my-2'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quia
           voluptatum sint. Nisi impedit libero eveniet cum vitae qui expedita

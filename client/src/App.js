@@ -13,8 +13,10 @@ import EditVender from './components/EditVender';
 import DeleteVender from './components/DeleteVender';
 
 function App() {
-  return (<>  
-    <Header/>
+  return (<>
+   <div className="min-h-screen p-4 bg-gradient-to-r from-purple-500 to-pink-500">
+
+    
     
     <Routes>
       <Route path='/' element={<Home />} />
@@ -28,6 +30,7 @@ function App() {
        <Route path='/venders/create' element={<CreateVenders />} />
       <Route path='*' element={<Error />} />
     </Routes>
+    </div>
   </>
     // <div className="App">
     //   <header className="App-header">

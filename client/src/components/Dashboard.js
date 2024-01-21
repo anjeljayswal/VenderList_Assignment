@@ -5,6 +5,7 @@ import { MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
 import Spinner from './Spinner';
 import VendersTable from './VendersTable';
 import VendersCard from './VendersCard';
+import Headers from './Header';
 
 const Dashboard = () => {
  
@@ -28,7 +29,10 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className='p-4'>
+    <>
+    <Headers/>
+    
+    <div className=' p-4 bg-gradient-to-r from-purple-500 to-pink-500  h-fit'>
       <div className='flex justify-center items-center gap-x-4'>
         <button
           className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
@@ -60,6 +64,8 @@ const Dashboard = () => {
         <VendersCard venders={venders} />
       )}
     </div>
+    
+    </>
   );
 };
 
