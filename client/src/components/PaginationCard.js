@@ -16,7 +16,7 @@ const PaginationCard = ({ data, itemsPerPage }) => {
     };
     return (
         <>
-            <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            <div className='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 m-0'>
                 {dataToDisplay.map((item) => (
                     <VenderSingleCard key={item._id} vender={item} />
                 ))}

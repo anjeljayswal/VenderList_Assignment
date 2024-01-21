@@ -1,13 +1,9 @@
-
-import Pagination from './Pagination';
 import PaginationCard from './PaginationCard';
-
 
 const VendersCard = ({ venders }) => {
   return (
     <>
-    <PaginationCard data={venders} itemsPerPage={8}/>
-    
+    <PaginationCard data={venders} itemsPerPage={8}/>    
     </>
     
   );

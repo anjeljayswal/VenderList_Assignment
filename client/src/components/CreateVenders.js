@@ -42,7 +42,7 @@ const CreateVenders = () => {
     return Object.keys(errors).length === 0;
   };
 
-  const handleSaveBook = () => {
+  const handleSaveVendor = () => {
     if (!validateForm()) {
       // Form validation failed
       return;
@@ -75,7 +75,7 @@ const CreateVenders = () => {
   return (
     <div className='p-4 bg-gradient-to-r from-purple-500 to-pink-500 h-fit'>
       <BackButton />
-      <h1 className='text-3xl my-1'>Create Book</h1>
+      <h1 className='text-3xl my-1'>Create Vendor</h1>
       {loading ? <Spinner /> : ''}
       <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
         <div className='my-1'>
@@ -145,7 +145,7 @@ const CreateVenders = () => {
           />
           {validationErrors.zipcode && <p className="text-red-500">{validationErrors.zipcode}</p>}
         </div>
-        <button className='flex items-center justify-center p-1 bg-sky-300  w-10 m' onClick={handleSaveBook}>
+        <button className='flex items-center justify-center p-1 bg-sky-300  w-10 m' onClick={handleSaveVendor}>
           Save
         </button>
       </div>

@@ -1,4 +1,3 @@
-// import React from 'react'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BackButton from './BackButton';
@@ -69,7 +68,7 @@ const EditVender = () => {
         <div className='p-1'>
             <BackButton />
 
-            <h1 className='text-3xl my-1'>Edit Vender</h1>
+            <h1 className='text-3xl my-1'>Edit Vendor</h1>
             {loading ? <Spinner /> : ''}
             <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
                 <div className='my-1'>
@@ -78,7 +77,7 @@ const EditVender = () => {
                         type='text'
                         value={vname}
                         onChange={(e) => setVName(e.target.value)}
-                        className='border-2 border-gray-500 px-4 py-2 w-full'
+                        className='border-2 border-gray-500 px-4 py-1 w-full'
                     />
                 </div>
                 <div className='my-1'>
@@ -87,7 +86,7 @@ const EditVender = () => {
                         type='text'
                         value={bname}
                         onChange={(e) => setBname(e.target.value)}
-                        className='border-2 border-gray-500 px-4 py-2  w-full '
+                        className='border-2 border-gray-500 px-4 py-1  w-full '
                     />
                 </div>
                 <div className='my-1'>
@@ -96,7 +95,7 @@ const EditVender = () => {
                         type='number'
                         value={accountNumber}
                         onChange={(e) => setAccountNumber(e.target.value)}
-                        className='border-2 border-gray-500 px-4 py-2  w-full '
+                        className='border-2 border-gray-500 px-4 py-1  w-full '
                     />
                 </div>
                 <div className='my-1'>
@@ -136,7 +135,7 @@ const EditVender = () => {
                     />
                 </div>
 
-                <button className='p-2 bg-sky-300 m-8' onClick={handleEditBook}>
+                <button className='p-1 bg-sky-300 m-2' onClick={handleEditBook}>
                     Save
                 </button>
             </div>
